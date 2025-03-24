@@ -10,21 +10,21 @@ const FeaturedGames = () => {
     {
       id: '1',
       title: 'Neon Warfare',
-      image: '/public/lovable-uploads/e95f9fc5-34a4-472a-a66d-9c2e98c5df31.png',
+      image: 'https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?q=80&w=2071&auto=format&fit=crop',
       demoAvailable: true,
       delay: 100
     },
     {
       id: '2',
       title: 'Eclipse Protocol',
-      image: '/public/lovable-uploads/c8813678-18e9-44b0-ab39-8776bfe73fac.png',
+      image: 'https://images.unsplash.com/photo-1551103782-8ab07afd45c1?q=80&w=2070&auto=format&fit=crop',
       demoAvailable: true,
       delay: 200
     },
     {
       id: '3',
       title: 'Hypernova Conflict',
-      image: '/public/lovable-uploads/f0077a99-6cf1-4dcb-9344-c620ae03d065.png',
+      image: 'https://images.unsplash.com/photo-1605899435973-ca2d1a8431cf?q=80&w=2070&auto=format&fit=crop',
       demoAvailable: true,
       delay: 300
     }

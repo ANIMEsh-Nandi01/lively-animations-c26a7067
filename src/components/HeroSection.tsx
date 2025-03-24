@@ -82,7 +82,7 @@ const HeroSection = () => {
               <div className="absolute inset-0 bg-gradient-to-r from-neon-pink/20 to-neon-purple/20 rounded-full blur-[100px]"></div>
               <div className="relative w-full h-full rounded-3xl overflow-hidden image-shine">
                 <img
-                  src="/public/lovable-uploads/b5cb5cd3-7c24-4fc9-a473-c9f9920ecb74.png"
+                  src="https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=2070&auto=format&fit=crop"
                   alt="VR Gaming Experience"
                   className="w-full h-auto object-cover rounded-3xl"
                 />

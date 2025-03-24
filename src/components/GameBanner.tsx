@@ -1,30 +1,31 @@
 
 import React from 'react';
 import { ScrollArea } from '@/components/ui/scroll-area';
+import { AspectRatio } from '@/components/ui/aspect-ratio';
 
 const games = [
   {
     id: 1,
     title: "Neon Eclipse",
-    image: "https://placehold.co/1200x600/120038/FF3DC3?text=Neon+Eclipse&font=montserrat",
+    image: "https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=1974&auto=format&fit=crop",
     category: "Action RPG",
   },
   {
     id: 2,
     title: "Cyber Heist",
-    image: "https://placehold.co/1200x600/1B0E42/3DFFFC?text=Cyber+Heist&font=montserrat",
+    image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=2070&auto=format&fit=crop",
     category: "Stealth",
   },
   {
     id: 3,
     title: "Astral Odyssey",
-    image: "https://placehold.co/1200x600/0A051F/8B3DFF?text=Astral+Odyssey&font=montserrat",
+    image: "https://images.unsplash.com/photo-1633265486501-0cf524a07213?q=80&w=2070&auto=format&fit=crop",
     category: "Adventure",
   },
   {
     id: 4,
     title: "Quantum Drift",
-    image: "https://placehold.co/1200x600/1F0A3D/3D8BFF?text=Quantum+Drift&font=montserrat",
+    image: "https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?q=80&w=2071&auto=format&fit=crop",
     category: "Racing",
   },
 ];

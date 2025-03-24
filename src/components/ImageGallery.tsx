@@ -1,35 +1,36 @@
 
 import React from 'react';
+import { AspectRatio } from '@/components/ui/aspect-ratio';
 
 const images = [
   {
     id: 1,
-    url: "https://placehold.co/600x400/110A29/FF3DC3?text=Team+Event&font=montserrat",
+    url: "https://images.unsplash.com/photo-1560419015-7c427e8ae5ba?q=80&w=2070&auto=format&fit=crop",
     alt: "Team Event"
   },
   {
     id: 2,
-    url: "https://placehold.co/600x400/1B0E42/3DFFFC?text=Game+Development&font=montserrat",
+    url: "https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=1974&auto=format&fit=crop",
     alt: "Game Development"
   },
   {
     id: 3,
-    url: "https://placehold.co/600x400/0A051F/8B3DFF?text=Office+Space&font=montserrat",
+    url: "https://images.unsplash.com/photo-1511882150382-421056c89033?q=80&w=2071&auto=format&fit=crop",
     alt: "Office Space"
   },
   {
     id: 4,
-    url: "https://placehold.co/600x400/1F0A3D/3D8BFF?text=Gaming+Tournament&font=montserrat",
+    url: "https://images.unsplash.com/photo-1560419015-d63a9c5afc90?w=1974&auto=format&fit=crop&q=80",
     alt: "Gaming Tournament"
   },
   {
     id: 5,
-    url: "https://placehold.co/600x400/110A29/FF3DC3?text=Community+Event&font=montserrat",
+    url: "https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?q=80&w=2070&auto=format&fit=crop",
     alt: "Community Event"
   },
   {
     id: 6,
-    url: "https://placehold.co/600x400/1B0E42/3DFFFC?text=Award+Ceremony&font=montserrat",
+    url: "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=2070&auto=format&fit=crop",
     alt: "Award Ceremony"
   },
 ];

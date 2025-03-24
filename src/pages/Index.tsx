@@ -8,6 +8,7 @@ import HowToGuide from '@/components/HowToGuide';
 import NewsletterSection from '@/components/NewsletterSection';
 import Footer from '@/components/Footer';
 import GameBanner from '@/components/GameBanner';
+import ImageGallery from '@/components/ImageGallery';
 
 const Index = () => {
   // Smooth page transition on load
@@ -33,6 +34,7 @@ const Index = () => {
         <CategoryMarquee />
         <GameBanner />
         <FeaturedGames />
+        <ImageGallery />
         <HowToGuide />
         <NewsletterSection />
       </main>

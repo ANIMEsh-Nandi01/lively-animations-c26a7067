@@ -19,6 +19,7 @@ const GameCard: React.FC<GameProps> = ({
   delay = 0
 }) => {
   const [isHovered, setIsHovered] = useState(false);
+  const [imageError, setImageError] = useState(false);
   
   return (
     <div 
@@ -30,10 +31,14 @@ const GameCard: React.FC<GameProps> = ({
       {/* Card Background with Image */}
       <div className="relative aspect-[3/4] w-full overflow-hidden rounded-3xl image-shine">
         <img 
-          src={image} 
+          src={imageError ? 'https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=800&auto=format&fit=crop&q=80' : image} 
           alt={title}
           className="w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-110"
           style={{ transform: isHovered ? 'scale(1.05)' : 'scale(1)' }}
+          onError={() => {
+            console.error(`Failed to load image: ${image}`);
+            setImageError(true);
+          }}
         />
         
         {/* Overlay */}

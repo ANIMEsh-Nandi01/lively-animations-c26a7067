@@ -1,31 +1,30 @@
 
 import React from 'react';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { AspectRatio } from '@/components/ui/aspect-ratio';
 
 const games = [
   {
     id: 1,
     title: "Neon Eclipse",
-    image: "https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=1974&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1511512578047-dfb367046420?w=800&auto=format&fit=crop&q=80",
     category: "Action RPG",
   },
   {
     id: 2,
     title: "Cyber Heist",
-    image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=2070&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=800&auto=format&fit=crop&q=80",
     category: "Stealth",
   },
   {
     id: 3,
     title: "Astral Odyssey",
-    image: "https://images.unsplash.com/photo-1633265486501-0cf524a07213?q=80&w=2070&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1633265486501-0cf524a07213?w=800&auto=format&fit=crop&q=80",
     category: "Adventure",
   },
   {
     id: 4,
     title: "Quantum Drift",
-    image: "https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?q=80&w=2071&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?w=800&auto=format&fit=crop&q=80",
     category: "Racing",
   },
 ];
@@ -50,6 +49,11 @@ const GameBanner = () => {
                   src={game.image} 
                   alt={game.title}
                   className="w-full h-full object-cover"
+                  onError={(e) => {
+                    console.error(`Failed to load image: ${game.image}`);
+                    // Fallback image
+                    e.currentTarget.src = "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=800&auto=format&fit=crop&q=80";
+                  }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-6">
                   <span className="text-sm text-neon-pink font-medium bg-white/10 px-3 py-1 rounded-full w-max mb-2">

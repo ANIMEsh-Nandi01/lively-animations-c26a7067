@@ -2,6 +2,7 @@
 import React, { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import ImageGallery from '@/components/ImageGallery';
 
 const About = () => {
   // Smooth page transition on load
@@ -23,71 +24,158 @@ const About = () => {
       <Navbar />
       
       <main className="flex-grow pt-24">
-        <div className="container mx-auto px-4 py-12">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-12">
-              <h1 className="text-4xl md:text-5xl font-bold mb-6">About GameTopia</h1>
-              <p className="text-white/70 text-lg">Your gateway to the world of gaming excellence</p>
+        {/* Hero Section */}
+        <section className="py-16 md:py-24 relative">
+          <div className="absolute right-0 top-0 w-1/2 h-full rounded-full bg-neon-purple/5 blur-[150px]"></div>
+          
+          <div className="container mx-auto px-4">
+            <div className="max-w-3xl mx-auto text-center">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">About GameTopia</h1>
+              <p className="text-white/70 text-lg mb-8">
+                Discover our story, mission, and the team behind GameTopia's gaming platform
+              </p>
             </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mt-16">
-              <div className="space-y-6">
-                <h2 className="text-2xl font-bold mb-4">Our Mission</h2>
-                <p className="text-white/70">At GameTopia, we're passionate about creating a vibrant community where gamers of all levels can discover, enjoy, and share incredible gaming experiences. Our mission is to provide a seamless platform that connects players with the games they love and helps them discover new favorites.</p>
+          </div>
+        </section>
+        
+        {/* Our Story Section */}
+        <section className="py-16 relative">
+          <div className="container mx-auto px-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+              <div>
+                <div className="inline-flex items-center px-3 py-1 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm mb-6">
+                  <span className="flex h-2 w-2 rounded-full bg-neon-pink mr-2"></span>
+                  <span className="text-sm font-medium text-white/80">Our Story</span>
+                </div>
                 
-                <h2 className="text-2xl font-bold mb-4 mt-8">Our Vision</h2>
-                <p className="text-white/70">We envision a world where gaming is recognized as a powerful medium for creativity, connection, and cultural expression. We're committed to supporting developers, celebrating gaming culture, and fostering an inclusive community where everyone feels welcome.</p>
+                <h2 className="text-3xl md:text-4xl font-bold mb-6">
+                  From Passion to Platform: <br />The GameTopia Journey
+                </h2>
+                
+                <p className="text-white/70 mb-6">
+                  GameTopia began as a small community of gaming enthusiasts who shared a common vision: 
+                  to create a platform where gamers from all backgrounds could discover, play, and connect 
+                  through exceptional gaming experiences.
+                </p>
+                
+                <p className="text-white/70 mb-6">
+                  Founded in 2018, our team has grown from a handful of passionate developers to a diverse
+                  crew of designers, engineers, and gaming experts dedicated to pushing the boundaries of
+                  what's possible in the gaming industry.
+                </p>
+                
+                <p className="text-white/70">
+                  Today, GameTopia serves millions of players worldwide, offering a curated collection of 
+                  games from both established studios and rising independent developers.
+                </p>
               </div>
               
-              <div className="relative rounded-3xl overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-r from-neon-pink/20 to-neon-purple/20 rounded-full blur-[100px]"></div>
+              <div className="image-shine">
                 <img 
-                  src="/public/lovable-uploads/f0077a99-6cf1-4dcb-9344-c620ae03d065.png" 
-                  alt="Gaming Setup" 
-                  className="relative w-full h-full object-cover rounded-3xl image-shine"
+                  src="https://placehold.co/600x800/1B0E42/FF3DC3?text=Our+Story&font=montserrat" 
+                  alt="GameTopia Story" 
+                  className="w-full h-auto rounded-2xl"
                 />
               </div>
             </div>
-            
-            <div className="mt-20">
-              <h2 className="text-3xl font-bold mb-8 text-center">Our Team</h2>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                {[
-                  {
-                    name: "Alex Morgan",
-                    role: "Founder & CEO",
-                    image: "/public/lovable-uploads/c8813678-18e9-44b0-ab39-8776bfe73fac.png"
-                  },
-                  {
-                    name: "Jamie Chen",
-                    role: "Head of Game Curation",
-                    image: "/public/lovable-uploads/e95f9fc5-34a4-472a-a66d-9c2e98c5df31.png"
-                  },
-                  {
-                    name: "Sam Wilson",
-                    role: "Community Manager",
-                    image: "/public/lovable-uploads/b5cb5cd3-7c24-4fc9-a473-c9f9920ecb74.png"
-                  }
-                ].map((member, index) => (
-                  <div 
-                    key={index} 
-                    className="glass-card rounded-xl p-6 text-center transition-all duration-300 hover:bg-white/10"
-                  >
-                    <div className="w-32 h-32 rounded-full overflow-hidden mx-auto mb-4 border-2 border-neon-pink/30">
-                      <img 
-                        src={member.image} 
-                        alt={member.name} 
-                        className="w-full h-full object-cover"
-                      />
+          </div>
+        </section>
+        
+        {/* Mission Section */}
+        <section className="py-16 relative">
+          <div className="absolute left-0 bottom-0 w-1/2 h-full rounded-full bg-neon-cyan/5 blur-[150px]"></div>
+          
+          <div className="container mx-auto px-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+              <div className="order-2 md:order-1 image-shine">
+                <img 
+                  src="https://placehold.co/600x600/110A29/3DFFFC?text=Our+Mission&font=montserrat" 
+                  alt="Our Mission" 
+                  className="w-full h-auto rounded-2xl"
+                />
+              </div>
+              
+              <div className="order-1 md:order-2">
+                <div className="inline-flex items-center px-3 py-1 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm mb-6">
+                  <span className="flex h-2 w-2 rounded-full bg-neon-blue mr-2"></span>
+                  <span className="text-sm font-medium text-white/80">Our Mission</span>
+                </div>
+                
+                <h2 className="text-3xl md:text-4xl font-bold mb-6">
+                  Revolutionizing the<br />Gaming Experience
+                </h2>
+                
+                <p className="text-white/70 mb-6">
+                  At GameTopia, our mission is to create an inclusive, innovative gaming ecosystem that 
+                  empowers both players and creators. We believe that gaming is more than entertainment—it's 
+                  a form of art, a social connector, and a platform for self-expression.
+                </p>
+                
+                <div className="space-y-4 mb-6">
+                  {[
+                    "Curate exceptional gaming experiences across all genres",
+                    "Support independent developers and nurture creative talent",
+                    "Build technology that makes gaming more accessible and enjoyable",
+                    "Foster a diverse, respectful community where all gamers belong"
+                  ].map((item, index) => (
+                    <div key={index} className="flex items-start">
+                      <span className="flex-shrink-0 h-5 w-5 rounded-full bg-neon-pink/20 flex items-center justify-center mt-1 mr-3">
+                        <span className="h-2.5 w-2.5 rounded-full bg-neon-pink"></span>
+                      </span>
+                      <p className="text-white/70">{item}</p>
                     </div>
-                    <h3 className="text-xl font-bold mb-1">{member.name}</h3>
-                    <p className="text-white/70">{member.role}</p>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        </section>
+        
+        {/* Image Gallery */}
+        <ImageGallery />
+        
+        {/* Team Section */}
+        <section className="py-16 relative">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-12">
+              <div className="inline-flex items-center px-3 py-1 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm mb-6">
+                <span className="flex h-2 w-2 rounded-full bg-neon-purple mr-2"></span>
+                <span className="text-sm font-medium text-white/80">Our Team</span>
+              </div>
+              
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">
+                Meet the Visionaries<br />Behind GameTopia
+              </h2>
+              
+              <p className="text-white/70 max-w-2xl mx-auto">
+                Our diverse team brings together expertise from gaming, technology, design, and business
+                to create the ultimate gaming platform.
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {[
+                { name: "Alex Chen", role: "Founder & CEO", image: "https://placehold.co/400x500/0A051F/FF3DC3?text=Alex+C.&font=montserrat" },
+                { name: "Maya Rodriguez", role: "Chief Technology Officer", image: "https://placehold.co/400x500/110A29/3DFFFC?text=Maya+R.&font=montserrat" },
+                { name: "James Wilson", role: "Head of Game Curation", image: "https://placehold.co/400x500/1B0E42/8B3DFF?text=James+W.&font=montserrat" },
+                { name: "Sarah Kim", role: "Creative Director", image: "https://placehold.co/400x500/1F0A3D/3D8BFF?text=Sarah+K.&font=montserrat" }
+              ].map((member, index) => (
+                <div key={index} className="glass-card rounded-xl p-5 transition-all duration-300 hover:bg-white/10">
+                  <div className="image-shine rounded-xl mb-4 overflow-hidden">
+                    <img 
+                      src={member.image} 
+                      alt={member.name} 
+                      className="w-full h-80 object-cover"
+                    />
+                  </div>
+                  
+                  <h3 className="text-xl font-bold">{member.name}</h3>
+                  <p className="text-neon-pink">{member.role}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
       </main>
       
       <Footer />

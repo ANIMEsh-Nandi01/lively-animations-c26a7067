@@ -2,6 +2,7 @@
 import React, { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import { ScrollArea } from '@/components/ui/scroll-area';
 
 const Support = () => {
   // Smooth page transition on load
@@ -18,151 +19,232 @@ const Support = () => {
     };
   }, []);
 
+  const faqs = [
+    {
+      question: "How do I create an account?",
+      answer: "To create an account, click on the 'Sign In' button in the top-right corner and select 'Create Account'. Follow the prompts to enter your email, create a password, and verify your account."
+    },
+    {
+      question: "What payment methods do you accept?",
+      answer: "We accept all major credit cards (Visa, Mastercard, American Express), PayPal, and various cryptocurrency options including Bitcoin and Ethereum."
+    },
+    {
+      question: "How do I download my purchased games?",
+      answer: "After purchasing a game, go to your library in your account dashboard. You'll find all your games there with download buttons. Click the download button for the game you want to install."
+    },
+    {
+      question: "Can I get a refund for a game?",
+      answer: "Yes, we offer refunds within 14 days of purchase if you've played less than 2 hours. To request a refund, go to your purchase history in your account and select the 'Request Refund' option."
+    },
+    {
+      question: "How do I contact customer support?",
+      answer: "You can contact our customer support team through the form on this page, by emailing support@gametopia.com, or by using the live chat feature available at the bottom right of every page."
+    }
+  ];
+
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
       
       <main className="flex-grow pt-24">
-        <div className="container mx-auto px-4 py-12">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-12">
-              <h1 className="text-4xl md:text-5xl font-bold mb-6">Customer Support</h1>
-              <p className="text-white/70 text-lg">We're here to help you with any questions or issues</p>
+        {/* Hero Section */}
+        <section className="py-16 md:py-24 relative">
+          <div className="absolute right-0 top-0 w-1/2 h-full rounded-full bg-neon-pink/5 blur-[150px]"></div>
+          
+          <div className="container mx-auto px-4">
+            <div className="max-w-3xl mx-auto text-center">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">Support Center</h1>
+              <p className="text-white/70 text-lg mb-8">
+                Get help with your account, game purchases, technical issues, or any other questions
+              </p>
             </div>
-            
-            <div className="glass-card rounded-3xl p-8 mb-12">
-              <h2 className="text-2xl font-bold mb-6">Frequently Asked Questions</h2>
-              
-              <div className="space-y-6">
-                {[
-                  {
-                    question: "How do I create an account?",
-                    answer: "To create an account, click on the 'Sign In' button in the top-right corner of our website, then select 'Create Account'. Fill in your details and verify your email address to complete the registration process."
-                  },
-                  {
-                    question: "How do I purchase games?",
-                    answer: "To purchase a game, browse our collections, select the game you want, and click the 'Buy Now' or 'Add to Cart' button. Follow the checkout process to complete your purchase using your preferred payment method."
-                  },
-                  {
-                    question: "What payment methods do you accept?",
-                    answer: "We accept all major credit cards, PayPal, and various regional payment methods. You can view all available payment options during the checkout process."
-                  },
-                  {
-                    question: "How do I download my purchased games?",
-                    answer: "After purchase, go to your account library where all your games will be listed. Click on the game title and select 'Download' to begin the installation process."
-                  }
-                ].map((faq, index) => (
-                  <div key={index} className="border-b border-white/10 pb-6 last:border-b-0">
-                    <h3 className="text-xl font-bold mb-2">{faq.question}</h3>
-                    <p className="text-white/70">{faq.answer}</p>
+          </div>
+        </section>
+        
+        {/* Support Options */}
+        <section className="py-12 relative">
+          <div className="container mx-auto px-4">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {[
+                {
+                  title: "Help Center",
+                  description: "Browse our knowledge base for answers to common questions",
+                  image: "https://placehold.co/400x300/110A29/FF3DC3?text=Help+Center&font=montserrat",
+                  buttonText: "Visit Help Center"
+                },
+                {
+                  title: "Contact Support",
+                  description: "Reach out to our support team for personalized assistance",
+                  image: "https://placehold.co/400x300/1B0E42/3DFFFC?text=Contact+Us&font=montserrat",
+                  buttonText: "Contact Us"
+                },
+                {
+                  title: "Community Forums",
+                  description: "Connect with other users to find solutions and share experiences",
+                  image: "https://placehold.co/400x300/0A051F/8B3DFF?text=Community&font=montserrat",
+                  buttonText: "Join Community"
+                }
+              ].map((option, index) => (
+                <div key={index} className="glass-card rounded-xl overflow-hidden transition-all duration-300 hover:bg-white/10 hover:scale-105">
+                  <div className="image-shine">
+                    <img 
+                      src={option.image} 
+                      alt={option.title} 
+                      className="w-full h-48 object-cover"
+                    />
                   </div>
-                ))}
-              </div>
+                  
+                  <div className="p-6">
+                    <h3 className="text-xl font-bold mb-2">{option.title}</h3>
+                    <p className="text-white/70 mb-4">{option.description}</p>
+                    <button className="w-full bg-gradient-to-r from-neon-purple to-neon-pink text-white px-6 py-2 rounded-full hover-glow transition-all duration-300 hover:scale-105">
+                      {option.buttonText}
+                    </button>
+                  </div>
+                </div>
+              ))}
             </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="glass-card rounded-3xl p-8">
-                <h2 className="text-2xl font-bold mb-6">Contact Us</h2>
-                <form className="space-y-4">
+          </div>
+        </section>
+        
+        {/* Contact Form */}
+        <section className="py-16 relative">
+          <div className="absolute left-0 bottom-0 w-1/2 h-full rounded-full bg-neon-blue/5 blur-[150px]"></div>
+          
+          <div className="container mx-auto px-4">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <div className="inline-flex items-center px-3 py-1 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm mb-6">
+                  <span className="flex h-2 w-2 rounded-full bg-neon-pink mr-2"></span>
+                  <span className="text-sm font-medium text-white/80">Get in Touch</span>
+                </div>
+                
+                <h2 className="text-3xl md:text-4xl font-bold mb-6">
+                  We're Here to Help<br />With Any Questions
+                </h2>
+                
+                <p className="text-white/70 mb-6">
+                  Can't find what you're looking for? Fill out the form and our support team
+                  will get back to you within 24 hours.
+                </p>
+                
+                <div className="mb-8">
+                  <div className="image-shine rounded-xl overflow-hidden">
+                    <img 
+                      src="https://placehold.co/600x400/1F0A3D/3DFFFC?text=Support+Team&font=montserrat" 
+                      alt="Support Team" 
+                      className="w-full h-auto"
+                    />
+                  </div>
+                </div>
+                
+                <div className="space-y-4">
+                  {[
+                    { label: "Email", value: "support@gametopia.com" },
+                    { label: "Phone", value: "+1 (555) 123-4567" },
+                    { label: "Hours", value: "Monday-Friday: 9AM-6PM EST" }
+                  ].map((item, index) => (
+                    <div key={index} className="flex items-start">
+                      <span className="flex-shrink-0 h-5 w-5 rounded-full bg-neon-pink/20 flex items-center justify-center mt-1 mr-3">
+                        <span className="h-2.5 w-2.5 rounded-full bg-neon-pink"></span>
+                      </span>
+                      <div>
+                        <p className="font-medium">{item.label}</p>
+                        <p className="text-white/70">{item.value}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              
+              <div className="glass-card rounded-xl p-8">
+                <h3 className="text-2xl font-bold mb-6">Send us a message</h3>
+                
+                <form className="space-y-6">
                   <div>
-                    <label htmlFor="name" className="block text-white mb-2">Your Name</label>
+                    <label htmlFor="name" className="block text-sm font-medium mb-2">Your Name</label>
                     <input 
                       type="text" 
-                      id="name"
-                      className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-neon-pink"
-                      placeholder="John Doe"
+                      id="name" 
+                      className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-neon-pink/50"
+                      placeholder="Enter your name"
                     />
                   </div>
                   
                   <div>
-                    <label htmlFor="email" className="block text-white mb-2">Email Address</label>
+                    <label htmlFor="email" className="block text-sm font-medium mb-2">Email Address</label>
                     <input 
                       type="email" 
-                      id="email"
-                      className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-neon-pink"
-                      placeholder="john@example.com"
+                      id="email" 
+                      className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-neon-pink/50"
+                      placeholder="Enter your email"
                     />
                   </div>
                   
                   <div>
-                    <label htmlFor="subject" className="block text-white mb-2">Subject</label>
+                    <label htmlFor="subject" className="block text-sm font-medium mb-2">Subject</label>
                     <input 
                       type="text" 
-                      id="subject"
-                      className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-neon-pink"
-                      placeholder="Help with my account"
+                      id="subject" 
+                      className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-neon-pink/50"
+                      placeholder="Enter subject"
                     />
                   </div>
                   
                   <div>
-                    <label htmlFor="message" className="block text-white mb-2">Message</label>
+                    <label htmlFor="message" className="block text-sm font-medium mb-2">Message</label>
                     <textarea 
-                      id="message"
+                      id="message" 
                       rows={5}
-                      className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-neon-pink"
-                      placeholder="Describe your issue or question..."
+                      className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-neon-pink/50"
+                      placeholder="Type your message here..."
                     ></textarea>
                   </div>
                   
                   <button 
-                    type="submit"
-                    className="bg-gradient-to-r from-neon-purple to-neon-pink text-white px-8 py-3 rounded-full font-medium transition-all duration-300 hover:scale-105 hover-glow w-full"
+                    type="submit" 
+                    className="w-full bg-gradient-to-r from-neon-purple to-neon-pink text-white px-6 py-3 rounded-full font-medium hover-glow transition-all duration-300 hover:scale-105"
                   >
                     Send Message
                   </button>
                 </form>
               </div>
-              
-              <div className="glass-card rounded-3xl p-8">
-                <h2 className="text-2xl font-bold mb-6">Other Ways to Reach Us</h2>
-                
-                <div className="space-y-6">
-                  <div>
-                    <h3 className="text-xl font-bold mb-2">Email Support</h3>
-                    <p className="text-white/70">For general inquiries: support@gametopia.com</p>
-                    <p className="text-white/70">For business inquiries: business@gametopia.com</p>
-                  </div>
-                  
-                  <div>
-                    <h3 className="text-xl font-bold mb-2">Phone Support</h3>
-                    <p className="text-white/70">Customer Service: +1 (555) 123-4567</p>
-                    <p className="text-white/70">Available Monday-Friday, 9 AM - 6 PM EST</p>
-                  </div>
-                  
-                  <div>
-                    <h3 className="text-xl font-bold mb-2">Social Media</h3>
-                    <p className="text-white/70">Follow us on social media for the fastest responses</p>
-                    <div className="flex space-x-4 mt-2">
-                      {['instagram', 'facebook', 'twitter', 'discord'].map((social, index) => (
-                        <a 
-                          key={index}
-                          href="#" 
-                          className="flex items-center justify-center w-10 h-10 rounded-full bg-white/10 text-white/80 hover:bg-neon-pink/20 hover:text-white transition-colors duration-300"
-                        >
-                          <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-                          </svg>
-                        </a>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-                
-                <div className="mt-8 relative rounded-xl overflow-hidden">
-                  <img 
-                    src="/public/lovable-uploads/e95f9fc5-34a4-472a-a66d-9c2e98c5df31.png" 
-                    alt="Support Team" 
-                    className="w-full h-48 object-cover rounded-xl"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-gaming-dark via-gaming-dark/50 to-transparent"></div>
-                  <div className="absolute bottom-4 left-4 text-white">
-                    <p className="font-bold">Our support team is ready to help</p>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
-        </div>
+        </section>
+        
+        {/* FAQ Section */}
+        <section className="py-16 relative">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-12">
+              <div className="inline-flex items-center px-3 py-1 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm mb-6">
+                <span className="flex h-2 w-2 rounded-full bg-neon-purple mr-2"></span>
+                <span className="text-sm font-medium text-white/80">FAQs</span>
+              </div>
+              
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">
+                Frequently Asked Questions
+              </h2>
+              
+              <p className="text-white/70 max-w-2xl mx-auto">
+                Find quick answers to common questions about our platform, services, and policies
+              </p>
+            </div>
+            
+            <div className="max-w-3xl mx-auto">
+              <ScrollArea className="h-[500px] rounded-lg">
+                <div className="space-y-6 pr-4">
+                  {faqs.map((faq, index) => (
+                    <div key={index} className="glass-card rounded-xl p-6 transition-all duration-300 hover:bg-white/10">
+                      <h3 className="text-xl font-bold mb-3">{faq.question}</h3>
+                      <p className="text-white/70">{faq.answer}</p>
+                    </div>
+                  ))}
+                </div>
+              </ScrollArea>
+            </div>
+          </div>
+        </section>
       </main>
       
       <Footer />

@@ -9,6 +9,7 @@ import Collections from "./pages/Collections";
 import About from "./pages/About";
 import Support from "./pages/Support";
 import NotFound from "./pages/NotFound";
+import BackgroundImages from "./components/BackgroundImages";
 
 const queryClient = new QueryClient();
 
@@ -18,6 +19,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <BackgroundImages />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/collections" element={<Collections />} />

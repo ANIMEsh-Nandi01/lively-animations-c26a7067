@@ -1,9 +1,17 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { ArrowUp } from 'lucide-react';
 
 const Footer = () => {
   const year = new Date().getFullYear();
+  
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
   
   return (
     <footer className="relative overflow-hidden border-t border-white/10">
@@ -95,12 +103,11 @@ const Footer = () => {
         {/* Scroll to top button */}
         <div className="flex justify-end mt-6">
           <button 
-            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            className="flex items-center justify-center w-12 h-12 rounded-full bg-white/5 border border-white/10 text-white/70 hover:bg-neon-pink/20 hover:text-white transition-colors duration-300"
+            onClick={scrollToTop}
+            aria-label="Scroll to top"
+            className="flex items-center justify-center w-12 h-12 rounded-full bg-white/5 border border-white/10 text-white/70 hover:bg-neon-pink/20 hover:text-white transition-all duration-300 hover:scale-105 hover-glow"
           >
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
-            </svg>
+            <ArrowUp className="h-5 w-5" />
           </button>
         </div>
       </div>

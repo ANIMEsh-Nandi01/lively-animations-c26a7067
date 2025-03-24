@@ -7,6 +7,7 @@ import FeaturedGames from '@/components/FeaturedGames';
 import HowToGuide from '@/components/HowToGuide';
 import NewsletterSection from '@/components/NewsletterSection';
 import Footer from '@/components/Footer';
+import GameBanner from '@/components/GameBanner';
 
 const Index = () => {
   // Smooth page transition on load
@@ -30,6 +31,7 @@ const Index = () => {
       <main className="flex-grow">
         <HeroSection />
         <CategoryMarquee />
+        <GameBanner />
         <FeaturedGames />
         <HowToGuide />
         <NewsletterSection />
